@@ -7,6 +7,7 @@ var shuffle = function(nums, n) {
         }
 
     return elements
+
 };
 
 const result = shuffle([2,5,1,3,6,7],3);

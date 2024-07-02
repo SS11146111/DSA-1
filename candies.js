@@ -1,29 +1,23 @@
 var kidsWithCandies = function(candies, extraCandies) {
     let result = [];
-    let greatest;
     let n = candies.length;
-   
+    let max = 0;
 
-    for(let i = 0; i < candies.length; i++)
-    {
-        let flag = false;
-        greatest = candies[i] + extraCandies;
-     
-        for(let j = 0; j < n; j++)
-        {  
-            if(greatest < candies[j])
-            {
-                greatest = candies[j]
-                flag = true;
-            }
-           
+    for(let i=0; i<n; i++)
+        {
+            if(max < candies[i])
+                max=candies[i];
         }
-        
-        if(flag == false)
-            result.push(true)
-        else
-            result.push(false)
-    }
+
+    for(let i=0; i<n; i++)
+        {
+            let sum=candies[i]+extraCandies;
+            if(sum>=max)
+                result.push(true)
+            else
+                result.push(false)
+        }
+ 
     return result
 };
 
